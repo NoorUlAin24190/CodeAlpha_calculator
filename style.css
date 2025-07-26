@@ -1,0 +1,150 @@
+/* === Base Styling === */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #9bb1fa, #285ac0);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap; /* Allows stacking on small screens */
+  padding: 20px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.calculator {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  width: 320px;
+  max-width: 100%;
+}
+
+#display {
+  width: 100%;
+  height: 60px;
+  background: #e6f0ff;
+  color: #333;
+  font-size: 2em;
+  text-align: right;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 15px;
+}
+
+button {
+  padding: 20px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 10px;
+  background: #d6e0f5;
+  color: #07529d;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #b3c6ff;
+}
+
+.operator {
+  background: #517ce8;
+  color: white;
+}
+
+.operator:hover {
+  background: #5c80e6;
+}
+
+.equal {
+  grid-row: span 2;
+  background: #28a7e6;
+  color: white;
+}
+
+.equal:hover {
+  background: #1c8dd6;
+}
+
+.zero {
+  grid-column: span 2;
+}
+
+/* === History Section === */
+.history {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  width: 250px;
+  max-width: 100%;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.history h2 {
+  margin-top: 0;
+  font-size: 1.5em;
+  color: #003366;
+  border-bottom: 2px solid #d6e0f5;
+  padding-bottom: 10px;
+}
+
+#historyList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#historyList li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  font-family: monospace;
+  color: #333;
+}
+
+/* === Media Queries === */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .calculator,
+  .history {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  button {
+    padding: 15px;
+    font-size: 1em;
+  }
+
+  #display {
+    font-size: 1.5em;
+    height: 50px;
+  }
+
+  .history h2 {
+    font-size: 1.2em;
+  }
+}
